@@ -1,0 +1,54 @@
+
+backend:
+  name: github
+  repo: Kingspride-III/-engineering-portfolio
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "projects"
+    label: "Engineering Projects"
+    folder: "projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - label: "Project Title"
+        name: "title"
+        widget: "string"
+
+      - label: "Project Category"
+        name: "category"
+        widget: "select"
+        options:
+          - "Mechanical Design"
+          - "Automotive"
+          - "Robotics & Automation"
+          - "Manufacturing"
+          - "Other"
+
+      - label: "Cover Photo"
+        name: "cover"
+        widget: "image"
+
+      - label: "Short Description"
+        name: "description"
+        widget: "text"
+
+      - label: "Project Gallery"
+        name: "gallery"
+        widget: "list"
+        required: false
+        fields:
+          - label: "Photo"
+            name: "image"
+            widget: "image"
+          - label: "Caption"
+            name: "caption"
+            widget: "text"
+            required: false
+
+      - label: "Project Details"
+        name: "body"
+        widget: "markdown"
